@@ -395,7 +395,7 @@ section.textbox
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1vw;
-    font-style: normal;
+    font-style: lighter;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,7 +408,7 @@ section.textbox
 .textbox-col h4 
 {
     color: rgb(255, 255, 255);
-    padding-bottom: 4vh;
+    padding-bottom: 4vw;
     text-transform: uppercase;
     justify-content: space-between;
     font-size: 1.5rem;
@@ -419,7 +419,7 @@ section.textbox
 
 }
 .reveal-heading {
-  transition: opacity 0.6s ease;
+  transition: opacity 0.5s ease;
 }
 
 .reveal-heading.is-hidden {
@@ -437,13 +437,13 @@ section.textbox
     background: rgb(0, 0, 0);
     transition: 0.25s;
     letter-spacing: 0;
-    line-height: 10em;
+    line-height: 1em;
 }
 
 .textbox .textbox-col-reveal span.active
 {
-  font-size: 1vw;
-  line-height: 1vw;
+    font-size: 3.5vw;
+    line-height: 4vw;
     color: #ffffff;
     background: transparent;
 }

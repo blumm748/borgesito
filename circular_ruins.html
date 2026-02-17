@@ -62,43 +62,43 @@
         </p>
     </div>
     </section>
-    <script>
-        let textElement = document.querySelector('.textbox-col-reveal');
-        let textContent = textElement.textContent;
-        textElement.innerHTML = '';
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
 
-        for (let char of textContent){
-            let span =  document.createElement('span');
-            span.textContent = char;
-            textElement.appendChild(span);
-        }
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
 
-        let spans = document.querySelectorAll('span');
-        window.addEventListener('scroll', () => {
-            let scrollDistance = window.scrollY;
-            spans.forEach((span,index) => {
-                if (scrollDistance >= (index + 1) * 1){
-                    span.classList.add('active');
-                } else {
-                    span.classList.remove('active');
-                }
-            
-            
-            })
+    let spans = document.querySelectorAll('span');
 
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
         })
+    });
 
-        window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
         const heading = document.querySelector('.reveal-heading');
-            if (!heading) return;
+        if (!heading) return;
 
-            setTimeout(() => {
+        setTimeout(() => {
             heading.classList.add('is-hidden');
-            }, 5000);
-        });
+        }, 5000);
+    });
+</script>
 
-
-    </script>
 </div>
 </body>
 </html>
