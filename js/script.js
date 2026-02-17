@@ -140,7 +140,7 @@
           1,
           {
             ease: Quint.easeOut,
-            scale: 0.2,
+            scale: 0.7,
           },
           0.9
         );
