@@ -216,16 +216,33 @@ section.studies .study .study-category {
 }
 
 section.studies .study .study-icon {
+  position: relative;
   flex: 1;
 }
 
 section.studies .study .study-icon .study-icon-img {
-  width: 7vw;
-  height: 100px;
-  object-fit: cover;
-  clip-path: square(50%);
-  background: var(--colors-primary);
+  width: 7vw; 
+  height: 100px; 
+  background-color: var(--colors-primary);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  transition: all 0.3s ease; 
 }
+
+/* study-icon-img:hover */
+section.studies .study .study-icon .study-icon-img:hover {
+  width: 300px;        
+  height: 300px;
+  background-size: contain;
+  position: sticky;
+  margin-top: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-10%, -10%);
+  z-index: 10;
+}
+
 
 section.studies .study .study-name {
   flex: 10;
