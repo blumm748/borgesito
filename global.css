@@ -346,7 +346,7 @@ section.textbox
 
 .textbox-col h4 
 {
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255,0.5);
     opacity: 50%;
     margin-bottom: 2vh;
     text-transform: uppercase;
@@ -381,7 +381,7 @@ section.textbox
     font-size: 2.5vh;
     color: transparent;
     background: rgb(0, 0, 0);
-    transition: 0.75s ease;
+    transition: 0.7s ease;
     letter-spacing: 0;
     line-height: 2vh;
 }
@@ -431,7 +431,7 @@ section.textbox
 
 .textbox-col h4 
 {
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255,0.5);
     padding-bottom: 4vw;
     text-transform: uppercase;
     justify-content: space-between;
@@ -552,6 +552,56 @@ section.textbox
   }
 }
 
+/* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
 
+footer#relative {
+  padding: 4rem 2rem;
+  position: static;
+}
+
+footer .footer-col {
+  flex: 1;
+  text-align: center;
+  position: static;
+}
+
+footer .footer-col p {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1em;
+  opacity: 50%;
+
+}
+
+footer .footer-col p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; 
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.35s ease-in-out; 
+}
+
+/* hover state */
+footer .footer-col p:hover::after {
+  width: 100%;
+}
+
+
+footer#light p {
+  color: var(--colors-background);
+}
 
 
