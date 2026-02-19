@@ -117,7 +117,7 @@ nav {
   padding: 0.2rem;
   padding-right: 2rem;
   text-transform: uppercase;
-  z-index: 1000000 !important;
+  z-index: 1000000;
 }
 
 nav#light a {
@@ -378,18 +378,19 @@ section.textbox
 .textbox-col .textbox-col-reveal span
 {
     position: relative;
-    font-size: 2vh;
+    font-size: 2.5vh;
     color: transparent;
     background: rgb(0, 0, 0);
     transition: 0.25s;
     letter-spacing: 0;
-    line-height: 1vh;
+    line-height: 2vh;
 }
 
 .textbox .textbox-col-reveal span.active
 {
-  font-size: 2vh;
+  font-size: 2.5vh;
     color: #ffffff;
+    opacity: 50%;
     background: transparent;
     line-height: 1vh;
 }
