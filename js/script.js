@@ -128,7 +128,7 @@
         )
         .to(
           img.DOM.el,
-          2,
+          1.2,
           {
             ease: Power1.easeOut,
             opacity: 0,
