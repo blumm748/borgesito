@@ -36,6 +36,7 @@ main {
   width: 100vw;
   min-height: 100vh;
   z-index: 0;
+  
 }
 
 .content {
@@ -159,7 +160,7 @@ section.about {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 2rem;
   padding-left: 15%;
@@ -294,27 +295,27 @@ section.stories .story .story-icon .story-icon-img:hover {
 }
 
 #project-1 {
-  background: url("./images/06.jpg") no-repeat 22% 38%;
+  background: url("/images/06.jpg") no-repeat 22% 38%;
   background-size: auto;
 }
 
 #project-2 {
-  background: url("./images/11.jpg") no-repeat 51.5% 52%;
+  background: url("/images/11.jpg") no-repeat 51.5% 52%;
   background-size: auto;
 }
 
 #project-3 {
-  background: url("./images/01.jpg") no-repeat 38% 39%;
+  background: url("/images/01.jpg") no-repeat 38% 39%;
   background-size: auto;
 }
 
 #project-4 {
-  background: url("./images/09.jpg") no-repeat 68% 54%;
+  background: url("/images/09.jpg") no-repeat 68% 54%;
   background-size: auto;
 }
 
 #project-5 {
-  background: url("./images/05.jpg") no-repeat 50% 50%;
+  background: url("/images/05.jpg") no-repeat 50% 50%;
   background-size: auto;
 }
 
@@ -378,7 +379,7 @@ section.textbox
 .textbox-col .textbox-col-reveal span
 {
     position: relative;
-    font-size: 2.5vh;
+    font-size: 2.6vh;
     color: transparent;
     background: rgb(0, 0, 0);
     transition: 0.7s ease;
@@ -388,7 +389,7 @@ section.textbox
 
 .textbox .textbox-col-reveal span.active
 {
-  font-size: 2.5vh;
+  font-size: 2.6vh;
     color: #ffffff;
     opacity: 50%;
     background: transparent;
@@ -604,4 +605,103 @@ footer#light p {
   color: var(--colors-background);
 }
 
+
+
+.fpContent {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 24vw;
+	margin-right: 20vw;
+	font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.fpContent--full {
+	min-height: 4vh;
+	display: flex;
+	place-items: center;
+}
+
+.fpContent p {
+	justify-self: center;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	font-weight: 100;
+  font-size: 1em;
+	opacity: 0.5;
+	line-height: 3vh;
+}
+
+
+.fpDeco {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	overflow: visible;
+	top: 20vh;
+	left: 0;
+	z-index: 1000000;
+	pointer-events: none;
+}
+
+.fpDeco__item {
+	grid-column: 3 / span 1;
+	background-size: contain;
+	overflow: visible;
+	background-repeat: no-repeat;
+	height: auto;
+	aspect-ratio: 1/3;
+	max-width: 30vw;
+	opacity: 0.4;
+}
+
+.fpDeco__item:nth-child(2n) {
+	max-width: 33vw;
+	grid-column: 1 / span 3;
+}
+
+.fpDeco__item:nth-child(3n) {
+	max-width: 20vw;
+	grid-column: 2 / span 2;
+}
+
+@media screen and (max-width: 500px) {
+
+	.fpDeco {
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr;	
+	row-gap: 20px;
+	column-gap: 20px;
+	justify-content: space-evenly;
+	overflow: visible;
+	z-index: 6;
+	pointer-events: none;
+	}
+	.fpDeco__item {
+		grid-column: 2 / span 1;
+		max-width: 30vw;
+		overflow: visible;
+	}
+	.fpDeco__item:nth-child(3n) {
+		max-width: 50vw;
+		grid-column: 3 / span 5;
+		overflow: visible;
+	}
+
+	.fpDeco__item:nth-child(3n) {
+		max-width: 7vw;
+		grid-column: 4 / span 2;
+	}
+
+	.fpDeco__item:nth-child(4n) {
+		grid-column: 3 / span 3;
+	}
+
+	.fpDeco__item:nth-child(5n) {
+		max-width: 10vw;
+		grid-column: 2 / span 4;
+	}
+}
 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Circular Ruins</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vdr5qit.css">
+</head>
+<body>
+
+<div class="container" id="dark">
+       <div class="gradient"></div>
+       
+      <!-- nav -->
+      <nav id="dark">
+        <div class="nav-logo">
+          <div class="nav-link">
+            <a href="../index.html">Borges</a>
+          </div>
+        </div>
+          <div class="nav-link">
+            <a href="../stories/stories.html">Stories</a>
+          </div>
+          <div class="nav-link">
+            <a href="../stories/stories.html">About</a>
+          </div>
+      </nav>
+
+    <div class="scroll-image"></div>
+
+
+    <section class="textbox"> 
+    <div class="textbox-col"> 
+    <h4 class="reveal-heading">The Circular Ruins</h4>
+        <p class="textbox-col-reveal"> 
+His victory and peace became blurred with boredom. In the twilight times of dusk and dawn, he would prostrate himself before the stone figure, perhaps imagining his unreal son carrying out identical rites in other circular ruins downstream; at night he no longer dreamed, or dreamed as any man does. His perceptions of the sounds and forms of the universe became somewhat pallid: his absent son was being nourished by these diminution of his soul. The purpose of his life had been fulfilled; the man remained in a kind of ecstasy. After a certain time, which some chronicles prefer to compute in years and others in decades, two oarsmen awoke him at midnight; he could not see their faces, but they spoke to him of a charmed man in a temple of the North, capable of walking on fire without burning himself. The wizard suddenly remembered the words of the god. He remembered that of all the creatures that people the earth, Fire was the only one who knew his son to be a phantom. This memory, which at first calmed him, ended by tormenting him. He feared lest his son should meditate on this abnormal privilege and by some means find out he was a mere simulacrum. Not to be a man, to be a projection of another man's dreams--what an incomparable humiliation, what madness! Any father is interested in the sons he has procreated (or permitted) out of the mere confusion of happiness; it was natural that the wizard should fear for the future of that son whom he had thought out entrail by entrail, feature by feature, in a thousand and one secret nights.
+        </p>
+    </div>
+    </section>
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
+
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('span');
+
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
+        })
+    });
+
+    window.addEventListener('load', () => {
+        const heading = document.querySelector('.reveal-heading');
+        if (!heading) return;
+
+        setTimeout(() => {
+            heading.classList.add('is-hidden');
+        }, 5000);
+    });
+    
+</script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+  });
+</script>
+
+
+</div>
+
+ <!-- footer -->
+      <footer id="light">
+
+        <div class="footer-col">
+        <a href="/circular-ruins/circular_ruins_page-6.html">
+          <p>Previous Page</p>
+        </a>
+        </div>       
+
+        <div class="footer-col">\
+        <a href="/circular-ruins/circular_ruins_page-8.html">
+          <p>Next Page</p>
+        </a>
+        </div>
+      </footer>
+
+</body>
+</html>
