@@ -28,31 +28,6 @@ p {
   font-size: 1.25rem;
 }
 
-/* svg */
-
-.background-svg{
-  filter: blur(0.1rem);
-  mix-blend-mode: screen;
-  width: 200%;
-  align-items: center;
-  position: fixed; 
-  top: -10vh; 
-  left: -30vw; 
-  z-index: 999999; 
-  pointer-events: none
-}
-
-@media (max-width: 500px) {
-  .background-svg{
-  width: 200%;
-  align-items: center;
-  position: fixed; 
-  top: -6vh; 
-  left: -117vw; 
-  z-index: 999999; 
-  pointer-events: none
-}
-}
 
 main {
   position: absolute;
@@ -151,6 +126,7 @@ nav#light a {
 
 nav .nav-links {
   display: flex;
+  position: static;
 }
 
 nav .nav-logo .nav-link,
@@ -173,6 +149,7 @@ header {
 
 header #name {
   font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 0.8em;
   font-size: 1.575rem;
 }
 
@@ -277,19 +254,42 @@ section.stories .story .story-date {
   flex: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
+
+  section.stories {
+  width: 100%;
+  padding-top: 5rem;
+}
+
+section.stories .story {
+  width: 100%;
+  padding: -1rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
   section.stories .story .story-actualName {
-    font-size: 0.75rem;
+    display: none;
   }
 
-
-  section.stories .story .story-icon .story-icon-img {
-  display: contents;
-  }
+section.stories .story .story-icon .story-icon-img, 
+section.stories .story .story-icon .story-icon-img:hover { 
+    width: 19vw; 
+    height: 300px; 
+    background-size: cover; 
+    position: static; 
+    margin-top: 0; 
+    top: auto; 
+    left: auto; 
+    transform: none; 
+    z-index: auto; 
+    transition: none; 
+}
 
   section.stories .story .story-name {
     font-size: 2rem;
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -410,6 +410,8 @@ section.textbox
 
 @media (max-width: 500px){
 
+  
+
 section.textbox
 {
     margin: 0;
@@ -517,6 +519,38 @@ section.textbox
 }
 
 }
+
+/* background gif*/
+.mobile-gif-background {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .mobile-gif-background {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./images/bg-gif.gif') center/cover no-repeat;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .mobile-gif-background::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    );
+    
+
+  }
+}
+
 
 
 

@@ -1,5 +1,6 @@
 {
   const body = document.body;
+  
 
   // helper functions
   const MathUtils = {
@@ -155,6 +156,9 @@
   };
 
   preloadImages().then(() => {
+    if (window.innerWidth < 500) { return; 
+      
+    }
     new ImageTrail();
   });
 }
