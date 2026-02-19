@@ -381,7 +381,7 @@ section.textbox
     font-size: 2.5vh;
     color: transparent;
     background: rgb(0, 0, 0);
-    transition: 0.25s;
+    transition: 0.75s ease;
     letter-spacing: 0;
     line-height: 2vh;
 }
