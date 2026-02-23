@@ -90,7 +90,7 @@ main {
     var(--colors-background) 100%
   );
   pointer-events: none;
-  animation: gradientPulse 6s ease-in-out infinite;
+  animation: gradientPulse 10s ease-in-out infinite;
 }
 
 /* gradient animation breathe in and out!*/
@@ -183,6 +183,7 @@ section.about .about-col p {
   section.about .about-col p {
     font-size: 1rem;
     margin-bottom: 1rem;
+    opacity: 75%;
   }
 }
 
@@ -276,8 +277,8 @@ section.stories .story {
 
 section.stories .story .story-icon .story-icon-img, 
 section.stories .story .story-icon .story-icon-img:hover { 
-    width: 19vw; 
-    height: 300px; 
+    width: 15vw; 
+    height: 400px; 
     background-size: cover; 
     position: static; 
     margin-top: 0; 
@@ -356,8 +357,6 @@ section.textbox
     font-weight: lighter;
 
 
-
-
 }
 .reveal-heading {
   transition: opacity 5s ease;
@@ -372,7 +371,7 @@ section.textbox
 .textbox-col .textbox-col-reveal
 {
     color: #ffffff;
-    max-width: 850px;
+    max-width: 60vw;
 
 }
 
@@ -410,83 +409,53 @@ section.textbox
     opacity: 0;
 }
 
-@media (max-width: 500px){
+.textbox-italics {
+  font-style: italic;
+}
 
-  
+@media (max-width: 500px){
 
 section.textbox
 {
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1vw;
+    font-size: 1vh;
     font-style: lighter;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: top;
-    min-height: 500vw;
+    min-height: 200vh;
     background: #000000;
-    line-height: 1.2vw;
+    line-height: 1.5vh;
 }
 
+.textbox-col { 
+    padding: 0; 
+    left: 5em; 
+    right: 0; 
+    width: 100vw;
+}
 
 .textbox-col h4 
 {
-    color: rgba(255, 255, 255,0.5);
-    padding-bottom: 4vw;
-    text-transform: uppercase;
-    justify-content: space-between;
-    font-size: 1.5rem;
-    font-weight: lighter;
-
-
-
+    display: none;
 
 }
-.reveal-heading {
-  transition: opacity 0.5s ease;
-}
-
-.reveal-heading.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-
-.textbox-col .textbox-col-reveal span
-{
-    position: relative;
-    font-size: 3vw;
-    color: transparent;
-    background: rgb(0, 0, 0);
-    transition: 0.25s;
-    letter-spacing: 0;
-    line-height: 1em;
-}
-
-.textbox .textbox-col-reveal span.active
-{
-    font-size: 3.5vw;
-    line-height: 4.2vw;
-    color: #ffffff;
-    opacity: 50%;
-    background: transparent;
-}
-
-.textbox .textbox-col-reveal span::before
-{
-    content: '';
-    position: absolute;
-    inset: 1px;
-    background: #000000;
-
-}
-
-.textbox .textbox-col-reveal span.active::before
-{
-    opacity: 0;
-}
+/*reworking the fade animation for mobile*/ 
+.reveal-heading, .reveal-heading.is-hidden { 
+    transition: none; 
+    opacity: 1; 
+    pointer-events: auto; } 
+    
+    .textbox-col .textbox-col-reveal span, .textbox .textbox-col-reveal span.active { 
+    transition: none; 
+    color: rgba(255, 255, 255,0.5); 
+    background: transparent; 
+    opacity: 1; 
+    font-size: 1.5vh;
+    line-height: 2vh; } 
+    
 
 /* gradient */
 
@@ -550,6 +519,7 @@ section.textbox
     );
     
 
+    
   }
 }
 
@@ -605,6 +575,64 @@ footer#light p {
   color: var(--colors-background);
 }
 
+
+@media (max-width: 500px) {
+
+  /* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 2em;
+  padding-top: 5em;
+}
+
+ footer, footer * {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+
+footer .footer-col {
+  
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+
+}
+
+footer .footer-col p {
+  
+  position: relative;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  opacity: 50%;
+
+}
+
+footer .footer-col p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; 
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.35s ease-in-out; 
+}
+
+}
 
 
 .fpContent {
