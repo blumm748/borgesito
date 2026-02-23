@@ -175,6 +175,7 @@ section.about .about-col p {
 
 @media (max-width: 500px) {
   section.about {
+    position: static;
     place-items: center;
     height: 100vh;
     display: grid;
