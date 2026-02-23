@@ -172,15 +172,19 @@ section.about .about-col p {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   section.about {
-    gap: 0;
-    flex-direction: column;
-    padding-left: 10%;
-    padding-right: 10%;
+    place-items: center;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 2em;
+    padding-top: 30em;
   }
 
   section.about .about-col p {
+    align-self: center;
+    justify-self: left;
     font-size: 1rem;
     margin-bottom: 1rem;
     opacity: 75%;
