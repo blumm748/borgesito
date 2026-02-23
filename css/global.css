@@ -165,6 +165,7 @@ section.about {
   gap: 2rem;
   padding-left: 15%;
   padding-right: 15%;
+  opacity: 50%;
 }
 
 section.about .about-col p {
