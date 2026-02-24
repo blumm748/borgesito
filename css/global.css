@@ -176,6 +176,52 @@ section.about .about-col p {
   margin-bottom: 2rem;
 }
 
+#slideshow {
+  text-align: center;
+  overflow: hidden;
+  height: 60vh;
+  width: 30vw;
+  margin: 0 auto;
+}
+
+.slide-wrapper {
+  width: 100vw;
+  -webkit-animation: slide 18s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 60vh;
+  width: 30vw;
+  align-self: center;
+}
+
+.slide:nth-child(1) {
+  background: url("/images/35.jpg") no-repeat 12% 38%;
+  background-size: cover;
+}
+
+.slide:nth-child(2) {
+  background: #037E8C;
+}
+
+.slide:nth-child(3) {
+  background: #36BF66;
+}
+
+.slide:nth-child(4) {
+  background: #D9D055;
+}
+
+
+@-webkit-keyframes slide {
+  20% {margin-left: 0vw;}
+  40% {margin-left: -30vw;}
+  60% {margin-left: -60vw;}
+  80% {margin-left: -90vw;}
+  90% {margin-left: 0vw;}
+}
+
 @media (max-width: 500px) {
   section.about {
     position: fixed;
