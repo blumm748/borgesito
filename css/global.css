@@ -159,12 +159,15 @@ header #name {
 section.about {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: grid;
+  padding: 20vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: column;
   justify-content: left;
   align-items: center;
   gap: 2rem;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
   opacity: 75%;
 }
 
@@ -179,7 +182,7 @@ section.about .about-col p {
     place-items: center;
     height: 100vh;
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     padding: 2em;
     padding-top: 10em;
   }
