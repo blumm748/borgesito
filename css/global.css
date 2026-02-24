@@ -98,13 +98,13 @@ main {
 @keyframes gradientPulse{
 
   0%{
-    height: 20vh;
+    height: 13vh;
   }
   50%{
-    height: 40vh;
+    height: 20vh;
   }
   100%{
-    height: 20vh;
+    height: 13vh;
   }
 }
 
@@ -118,7 +118,7 @@ nav {
   padding: 0.2rem;
   padding-right: 2rem;
   text-transform: uppercase;
-  z-index: 1000000;
+  z-index: 1000;
 }
 
 nav#light a {
@@ -165,7 +165,7 @@ section.about {
   gap: 2rem;
   padding-left: 15%;
   padding-right: 15%;
-  opacity: 50%;
+  opacity: 75%;
 }
 
 section.about .about-col p {
@@ -189,7 +189,7 @@ section.about .about-col p {
     justify-self: left;
     font-size: 1rem;
     margin-bottom: 1rem;
-    opacity: 50%;
+    opacity: 75%;
   }
 }
 
@@ -405,7 +405,7 @@ section.textbox
 {
     content: '';
     position: absolute;
-    inset: 1px;
+    inset: -1px;
     background: #000000;
 
 }
@@ -418,6 +418,28 @@ section.textbox
 .textbox-italics {
   font-style: italic;
 }
+
+.centerpiece {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+  pointer-events: none; 
+  animation: fadeOutCenterpiece 10s ease forwards;
+}
+
+.centerpiece img {
+  width: 50vw;
+  max-width: 600px;
+}
+
+@keyframes fadeOutCenterpiece{
+  0% {opacity: 0;}
+  50%{opacity: 0.7;}
+  100%{opacity: 0;}
+}
+
 
 @media (max-width: 500px){
 
@@ -438,7 +460,7 @@ section.textbox
 
 .textbox-col { 
     padding: 0; 
-    left: 5em; 
+    left: 8em; 
     right: 0; 
     width: 100vw;
 }
@@ -459,11 +481,11 @@ section.textbox
     color: rgba(255, 255, 255,0.5); 
     background: transparent; 
     opacity: 1; 
-    font-size: 1.5vh;
+    font-size: 1.7vh;
     line-height: 2vh; } 
     
 
-/* gradient */
+/* gradient for mobile*/
 
 .gradient {
   position: fixed;
@@ -485,15 +507,28 @@ section.textbox
 @keyframes gradientPulse{
 
   0%{
-    height: 10vh;
+    height: 7vh;
   }
   50%{
-    height: 30vh;
-  }
-  100%{
     height: 10vh;
   }
+  100%{
+    height: 7vh;
+  }
 }
+/*mobile centerpiece*/
+  .centerpiece {
+    top: 50%; /* slightly higher for mobile */
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.5;
+  }
+
+  .centerpiece img {
+    width: 80vw;
+    max-width: none;
+  }
+
 
 }
 
@@ -738,4 +773,5 @@ footer .footer-col p::after {
 		grid-column: 2 / span 4;
 	}
 }
+
 
