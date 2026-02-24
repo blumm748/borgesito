@@ -108,7 +108,7 @@ main {
   }
 }
 
-/* nav */
+/* nav 
 nav {
   position: fixed;
   width: 100%;
@@ -130,14 +130,80 @@ nav .nav-links {
   position: static;
 }
 
+
 nav .nav-logo .nav-link,
 nav .nav-links .nav-link {
   padding: 1rem;
 }
 
+
+nav .nav-links .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: black;
+  transition: width 0.35s ease-in-out;
+}
+
+nav .nav-links .nav-link:hover::after {
+  width: 100%;
+
+}
+
 nav .nav-logo {
   font-size: 1.5rem;
 }
+  */
+
+  /* nav */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  z-index: 1000;
+}
+
+nav#light a {
+  color: var(--colors-background);
+}
+
+nav .nav-link {
+  display: inline-block;
+}
+nav .nav-link a {
+  padding: 1.5rem;
+  position: relative;
+   display: inline-block;
+  text-decoration: none;
+}
+
+nav .nav-link a::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 18px;
+  width: 0%;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 0.35s ease-in-out;
+}
+
+nav .nav-link a:hover::after {
+  max-width: 150px;
+  width: 100%;
+}
+
+nav .nav-logo {
+  font-size: 1.5rem;
+}
+
+
 
 /* header */
 header {
@@ -185,8 +251,8 @@ section.about .about-col p {
 }
 
 .slide-wrapper {
-  width: 100vw;
-  -webkit-animation: slide 18s ease infinite;
+  width: 120vw;
+  -webkit-animation: slide 28s ease infinite;
 }
 
 .slide {
@@ -197,20 +263,23 @@ section.about .about-col p {
 }
 
 .slide:nth-child(1) {
-  background: url("/images/35.jpg") no-repeat 12% 38%;
+  background: url("/images/35.jpg") no-repeat 0% 0%;
   background-size: cover;
 }
 
 .slide:nth-child(2) {
-  background: #037E8C;
+  background: url("/images/36.jpg") no-repeat 50% 50%;
+  background-size: cover;
 }
 
 .slide:nth-child(3) {
-  background: #36BF66;
+  background: url("/images/37.jpg") no-repeat 12% 38%;
+  background-size: cover;
 }
 
 .slide:nth-child(4) {
-  background: #D9D055;
+  background: url("/images/38.jpg") no-repeat 12% 38%;
+  background-size: cover;
 }
 
 
@@ -282,12 +351,12 @@ section.stories .story .story-icon .story-icon-img {
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease-in-out; 
 }
 
 /* story-icon-img:hover */
 section.stories .story .story-icon .story-icon-img:hover {
-  transition-delay: 0.2s;
+  transition-delay: 0.3s;
   width: 300px;        
   height: 300px;
   background-size: contain;
