@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden of Forking Paths</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vdr5qit.css">
+    <link rel="icon" href="/images/favicon-01.png" type="image/png" sizes="16x16">
+  </head>
+<body>
+
+<div class="container" id="dark">
+       <div class="gradient"></div>
+       
+      <!-- nav -->
+      <nav>
+        <div class="nav-logo">
+          <div class="nav-link">
+            <a href="../index.html">Borges</a>
+          </div>
+        </div>
+
+          <div class="nav-link">
+            <a href="../stories/stories.html">Stories</a>
+          </div>
+          
+          <div class="nav-link">
+            <a href="../about/about.html">About</a>
+          </div>
+
+      </nav>
+
+    <div class="scroll-image"></div>
+
+
+    <section class="textbox"> 
+    <div class="textbox-col"> 
+        <p class="textbox-col-reveal"> 
+I have some understanding of labyrinths: not for nothing am I the great grandson of that Ts’ui Pên who was governor of Yunnan and who renounced worldly power in order to write a novel that might be even more populous than the Hung Lu Meng and to construct a labyrinth in which all men would become lost. Thirteen years he dedicated to these heterogeneous tasks, but the hand of a stranger murdered him—and his novel was incoherent and no one found the labyrinth. Beneath English trees I meditated on that lost maze: I imagined it inviolate and perfect at the secret crest of a mountain; I imagined it erased by rice fields or beneath the water; I imagined it infinite, no longer composed of octagonal kiosks and returning paths, but of rivers and provinces and kingdoms . . . I thought of a labyrinth of labyrinths, of one sinuous spreading labyrinth that would encompass the past and the future and in some way involve the stars. Absorbed in these illusory images, I forgot my destiny of one pursued. I felt myself to be, for an unknown period of time, an abstract perceiver of the world. The vague, living countryside, the moon, the remains of the day worked on me, as well as the slope of the road which eliminated any possibility of weariness. 
+ </p>
+    </div>
+    </section>
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
+
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('span');
+
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
+        })
+    });
+
+    window.addEventListener('load', () => {
+        const heading = document.querySelector('.reveal-heading');
+        if (!heading) return;
+
+        setTimeout(() => {
+            heading.classList.add('is-hidden');
+        }, 5000);
+    });
+    
+</script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+  });
+</script>
+
+
+</div>
+
+ <!-- footer -->
+      <footer id="light">
+
+        <div class="footer-col">
+        <a href="/forking-paths/forking-paths7.html">
+          <p>backward</p>
+        </a>
+        </div>       
+
+        <div class="footer-col">\
+        <a href="/forking-paths/forking-paths9.html">
+          <p>forward</p>
+        </a>
+        </div>
+      </footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden of Forking Paths</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vdr5qit.css">
+    <link rel="icon" href="/images/favicon-01.png" type="image/png" sizes="16x16">
+  </head>
+<body>
+
+<div class="container" id="dark">
+       <div class="gradient"></div>
+        <div class="centerpiece">
+         <img src="/images/06.jpg" alt="An ilustration of a Woman dreaming a man who sees himself reflected in a mirror.">
+        </div>
+
+       
+      <!-- nav -->
+      <nav>
+        <div class="nav-logo">
+          <div class="nav-link">
+            <a href="../index.html">Borges</a>
+          </div>
+        </div>
+
+          <div class="nav-link">
+            <a href="../stories/stories.html">Stories</a>
+          </div>
+          
+          <div class="nav-link">
+            <a href="../about/about.html">About</a>
+          </div>
+
+      </nav>
+
+    <div class="scroll-image"></div>
+
+
+    <section class="textbox"> 
+    <div class="textbox-col"> 
+        <p class="textbox-col-reveal"> 
+I have compared hundreds of manuscripts, I have corrected the errors that the negligence of the copyists has introduced, I have guessed the plan of this chaos, I have re-established—I believe I have re-established—the primordial organization, I have translated the entire work: it is clear to me that not once does he employ the word ‘time.’ The explanation is obvious: The Garden of Forking Paths is an incomplete, but not false, image of the universe as Ts’ui Pên conceived it. In contrast to Newton and Schopenhauer, your ancestor did not believe in a uniform, absolute time. He believed in an infinite series of times, in a growing, dizzying net of divergent, convergent and parallel times. This network of times which approached one another, forked, broke off, or were unaware of one another for centuries, embraces all possibilities of time. We do not exist in the majority of these times; in some you exist, and not I; in others I, and not you; in others, both of us. In the present one, which a favorable fate has granted me, you have arrived at my house; in another, while crossing the garden, you found me dead; in still another, I utter these same words, but I am a mistake, a ghost.”
+</p>
+    </div>
+
+    </section>
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
+
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('span');
+
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
+        })
+    });
+
+    window.addEventListener('load', () => {
+        const heading = document.querySelector('.reveal-heading');
+        if (!heading) return;
+
+        setTimeout(() => {
+            heading.classList.add('is-hidden');
+        }, 5000);
+    });
+    
+</script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+  });
+</script>
+
+
+</div>
+
+ <!-- footer -->
+      <footer id="light">
+
+        <div class="footer-col">
+        <a href="/forking-paths/forking-paths14.html">
+          <p>backward</p>
+        </a>
+        </div>       
+
+        <div class="footer-col">\
+        <a href="/forking-paths/forking-path16.html">
+          <p>forward</p>
+        </a>
+        </div>
+      </footer>
+
+</body>
+</html>

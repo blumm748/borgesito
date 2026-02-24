@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden of Forking Paths</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vdr5qit.css">
+    <link rel="icon" href="/images/favicon-01.png" type="image/png" sizes="16x16">
+  </head>
+<body>
+
+<div class="container" id="dark">
+       <div class="gradient"></div>
+       
+      <!-- nav -->
+      <nav>
+        <div class="nav-logo">
+          <div class="nav-link">
+            <a href="../index.html">Borges</a>
+          </div>
+        </div>
+
+          <div class="nav-link">
+            <a href="../stories/stories.html">Stories</a>
+          </div>
+          
+          <div class="nav-link">
+            <a href="../about/about.html">About</a>
+          </div>
+
+      </nav>
+
+    <div class="scroll-image"></div>
+
+
+    <section class="textbox"> 
+    <div class="textbox-col"> 
+        <p class="textbox-col-reveal"> 
+
+I talked with him for scarcely an hour, but during that hour he was Goethe . . . I did it because I sensed that the Chief somehow feared people of my race—for the innumerable ancestors who merge within me. I wanted to prove to him that a yellow man could save his armies. Besides, I had to flee from Captain Madden. His hands and his voice could call at my door at any moment. I dressed silently, bade farewell to myself in the mirror, went downstairs, scrutinized the peaceful street and went out. The station was not far from my home, but I judged it wise to take a cab. I argued that in this way I ran less risk of being recognized; the fact is that in the deserted street I felt myself visible and vulnerable, infinitely so. I remember that I told the cab driver to stop a short distance before the main entrance. I got out with voluntary, almost painful slowness; I was going to the village of Ashgrove but I bought a ticket for a more distant station. The train left within a very few minutes, at eight-fifty. I hurried; the next one would leave at nine-thirty. There was hardly a soul on the platform. </p>
+    </div>
+    </section>
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
+
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('span');
+
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
+        })
+    });
+
+    window.addEventListener('load', () => {
+        const heading = document.querySelector('.reveal-heading');
+        if (!heading) return;
+
+        setTimeout(() => {
+            heading.classList.add('is-hidden');
+        }, 5000);
+    });
+    
+</script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+  });
+</script>
+
+
+</div>
+
+ <!-- footer -->
+      <footer id="light">
+
+        <div class="footer-col">
+        <a href="/forking-paths/forking-paths4.html">
+          <p>backward</p>
+        </a>
+        </div>       
+
+        <div class="footer-col">\
+        <a href="/forking-paths/forking-paths6.html">
+          <p>forward</p>
+        </a>
+        </div>
+      </footer>
+
+</body>
+</html>

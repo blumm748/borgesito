@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden of Forking Paths</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vdr5qit.css">
+    <link rel="icon" href="/images/favicon-01.png" type="image/png" sizes="16x16">
+  </head>
+<body>
+
+<div class="container" id="dark">
+       <div class="gradient"></div>
+       
+      <!-- nav -->
+      <nav>
+        <div class="nav-logo">
+          <div class="nav-link">
+            <a href="../index.html">Borges</a>
+          </div>
+        </div>
+
+          <div class="nav-link">
+            <a href="../stories/stories.html">Stories</a>
+          </div>
+          
+          <div class="nav-link">
+            <a href="../about/about.html">About</a>
+          </div>
+
+      </nav>
+
+    <div class="scroll-image"></div>
+
+
+    <section class="textbox"> 
+    <div class="textbox-col"> 
+        <p class="textbox-col-reveal"> 
+I went through the coaches; I remember a few farmers, a woman dressed in mourning, a young boy who was reading with fervor the Annals of Tacitus, a wounded and happy soldier. The coaches jerked forward at last. A man whom I recognized ran in vain to the end of the platform. It was Captain Richard Madden. Shattered, trembling, I shrank into the far corner of the seat, away from the dreaded window. From this broken state I passed into an almost abject felicity. I told myself that the duel had already begun and that I had won the first encounter by frustrating, even if for forty minutes, even if by a stroke of fate, the attack of my adversary. I argued that this slightest of victories foreshadowed a total victory. I argued (no less fallaciously) that my cowardly felicity proved that I was a man capable of carrying out the adventure successfully. From this weakness I took strength that did not abandon me. I foresee that man will resign himself each day to more atrocious undertakings; soon there will be no one but warriors and brigands; I give them this counsel: The author of an atrocious undertaking ought to imagine that he has already accomplished it, ought to impose upon himself a future as irrevocable as the past.  </p>
+    </div>
+    </section>
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
+
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('span');
+
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
+        })
+    });
+
+    window.addEventListener('load', () => {
+        const heading = document.querySelector('.reveal-heading');
+        if (!heading) return;
+
+        setTimeout(() => {
+            heading.classList.add('is-hidden');
+        }, 5000);
+    });
+    
+</script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+  });
+</script>
+
+
+</div>
+
+ <!-- footer -->
+      <footer id="light">
+
+        <div class="footer-col">
+        <a href="/forking-paths/forking-paths5.html">
+          <p>backward</p>
+        </a>
+        </div>       
+
+        <div class="footer-col">\
+        <a href="/forking-paths/forking-paths7.html">
+          <p>forward</p>
+        </a>
+        </div>
+      </footer>
+
+</body>
+</html>

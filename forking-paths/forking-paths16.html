@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Garden of Forking Paths</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" href="https://use.typekit.net/vdr5qit.css">
+    <link rel="icon" href="/images/favicon-01.png" type="image/png" sizes="16x16">
+  </head>
+<body>
+
+<div class="container" id="dark">
+       <div class="gradient"></div>
+        <div class="centerpiece">
+         <img src="/images/06.jpg" alt="An ilustration of a Woman dreaming a man who sees himself reflected in a mirror.">
+        </div>
+
+       
+      <!-- nav -->
+      <nav>
+        <div class="nav-logo">
+          <div class="nav-link">
+            <a href="../index.html">Borges</a>
+          </div>
+        </div>
+
+          <div class="nav-link">
+            <a href="../stories/stories.html">Stories</a>
+          </div>
+          
+          <div class="nav-link">
+            <a href="../about/about.html">About</a>
+          </div>
+
+      </nav>
+
+    <div class="scroll-image"></div>
+
+
+    <section class="textbox"> 
+    <div class="textbox-col"> 
+        <p class="textbox-col-reveal"> 
+“In every one,” I pronounced, not without a tremble to my voice, “I am grateful to you and revere you for your re-creation of the garden of Ts’ui Pên.”“Not in all,” he murmured with a smile. “Time forks perpetually toward innumerable futures. In one of them I am your enemy.”Once again I felt the swarming sensation of which I have spoken. It seemed to me that the humid garden that surrounded the house was infinitely saturated with invisible persons. Those persons were Albert and I, secret, busy and multiform in other dimensions of time. I raised my eyes and the tenuous nightmare dissolved. In the yellow and black garden there was only one man; but this man was as strong as a statue . . . this man was approaching along the path and he was Captain Richard Madden.“The future already exists,” I replied, “but I am your friend. Could I see the letter again?” Albert rose. Standing tall, he opened the drawer of the tall desk; for the moment his back was to me. I had readied the revolver. I fired with extreme caution. Albert fell uncomplainingly, immediately. I swear his death was instantaneous—a lightning stroke. The rest is unreal, insignificant. Madden broke in, arrested me. I have been condemned to the gallows. 
+</p>
+    </div>
+
+    </section>
+<script>
+    let textElement = document.querySelector('.textbox-col-reveal');
+    let textContent = textElement.textContent;
+    textElement.innerHTML = '';
+
+    for (let char of textContent){
+        let span =  document.createElement('span');
+        span.textContent = char;
+        textElement.appendChild(span);
+    }
+
+    let spans = document.querySelectorAll('span');
+
+    //mobile adjust
+    let speed = window.innerWidth < 500 ? 0.3 : 1;
+
+    window.addEventListener('scroll', () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span,index) => {
+            if (scrollDistance >= (index + 1) * speed){
+                span.classList.add('active');
+            } else {
+                span.classList.remove('active');
+            }
+        })
+    });
+
+    window.addEventListener('load', () => {
+        const heading = document.querySelector('.reveal-heading');
+        if (!heading) return;
+
+        setTimeout(() => {
+            heading.classList.add('is-hidden');
+        }, 5000);
+    });
+    
+</script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+  });
+</script>
+
+
+</div>
+
+ <!-- footer -->
+      <footer id="light">
+
+        <div class="footer-col">
+        <a href="/forking-paths/forking-paths15.html">
+          <p>backward</p>
+        </a>
+        </div>       
+
+        <div class="footer-col">\
+        <a href="/forking-paths/forking-paths17.html">
+          <p>forward</p>
+        </a>
+        </div>
+      </footer>
+
+</body>
+</html>
