@@ -605,7 +605,7 @@ section.textbox
     
     .textbox-col .textbox-col-reveal span, .textbox .textbox-col-reveal span.active { 
     transition: none; 
-    color: rgba(255, 255, 255,0.6); 
+    color: rgba(255, 255, 255,0.7); 
     background: transparent; 
     opacity: 1; 
     font-size: 1.7vh;
