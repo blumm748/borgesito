@@ -187,7 +187,7 @@ nav .nav-link a::after {
   content: "";
   position: absolute;
   left: 0px;
-  bottom: 18px;
+  bottom: 21px;
   width: 0%;
   height: 1.5px;
   background: currentColor;
@@ -551,7 +551,7 @@ section.textbox
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; 
-  pointer-events: none; 
+  pointer-events: all; 
   animation: fadeOutCenterpiece 10s ease forwards;
 }
 
@@ -644,7 +644,7 @@ section.textbox
 }
 /*mobile centerpiece*/
   .centerpiece {
-    top: 50%; /* slightly higher for mobile */
+    top: 50%; 
     left: 50%;
     transform: translate(-50%,-50%);
     opacity: 0.5;
