@@ -295,7 +295,7 @@ section.about .about-col p {
   section.about {
     position: fixed;
     place-items: center;
-    height: 100vh;
+    height: 10vh;
     display: grid;
 
     grid-template-columns: 1fr;
